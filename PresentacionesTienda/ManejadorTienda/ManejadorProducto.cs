@@ -12,6 +12,12 @@ namespace ManejadorTienda
 {
     public class ManejadorProducto
     {
-
+        AccesoProductos ap = new AccesoProductos();
+        Grafico g = new Grafico();
+        public void Guardar(dynamic Entidad)
+        {
+            ap.Guardar(Entidad);
+            g.Mensaje("Datos Guardados", "!ATENCIONS", MessageBoxIcon.Information);
+        }
     }
 }
