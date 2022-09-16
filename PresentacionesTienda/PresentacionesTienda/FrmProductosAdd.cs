@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace PresentacionesTienda
 {
-    public partial class FrmProducto : Form
+    public partial class FrmProductosAdd : Form
     {
-        public FrmProducto()
+        public FrmProductosAdd()
         {
             InitializeComponent();
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void btnn_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
     }
 }
