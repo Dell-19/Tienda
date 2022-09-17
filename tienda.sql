@@ -17,7 +17,7 @@ BEGIN
 DECLARE x INT;
 SELECT COUNT(*) FROM producto WHERE nombre = _nombre INTO X;
 if x=0 AND _idproducto < 0 then 
-INSERT INTO producto VALUES(NULL,_nombre,_descripcion,precio);
+INSERT INTO producto VALUES(NULL,_nombre,_descripcion,_precio);
 ELSE if x=0 AND _idproducto > 0 then
 UPDATE producto SET nombre=_nombre,descripcion=_descripcion,precio=_precio WHERE idproducto=_idproducto;
 ELSE
