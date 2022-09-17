@@ -28,6 +28,46 @@ namespace PresentacionesTienda
             Close();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Actualizar();
+        }
+        void Actualizar()
+        {
+            mp.Mostrar(dtgProductos, textBox1.Text);
+        }
+
+        private void dtgProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (col)
+            {
+                case 4: {
+                FrmProductosAdd pd = new FrmProductosAdd();
+                pd.ShowDialog();
+                textBox1.Text = "";
+                Actualizar();
+            }
+            break;
+                case 5: {
+                mp.Borrar(p);
+                textBox1.Text = "";
+                Actualizar();
+            }
+            break;
+        }
+    }
+
+        private void dtgProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex;
+            col = e.ColumnIndex;
+            p.IdProducto = int.Parse(dtgProductos.Rows[fila].Cells[0].Value.ToString());
+            p.Nombre = dtgProductos.Rows[fila].Cells[1].Value.ToString();
+            p.Descripcion = dtgProductos.Rows[fila].Cells[2].Value.ToString();
+            p.Precio = dtgProductos.Rows[fila].Cells[3].Value.ToString();
+
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             p.IdProducto = -1;

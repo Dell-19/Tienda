@@ -12,7 +12,7 @@ namespace PresentacionesTienda
         [STAThread]
         static void Main()
         {
-            Application.Run(new FrmProductosAdd());
+            Application.Run(new FrmProducto());
         }
     }
 }
